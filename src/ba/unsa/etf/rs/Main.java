@@ -128,5 +128,4 @@ public class Main extends Application {
         else
             throw new MyRuntimeException("Game is out of bounds: " + index + " of " + model.getGameSize());
     }
-
 }
