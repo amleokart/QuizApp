@@ -48,10 +48,10 @@ public class MenuController {
             e.printStackTrace();
         }
     }
-
-    public void changeLanguage(ActionEvent actionEvent) {
+    
+    public void openAbout(ActionEvent actionEvent) {
     }
 
-    public void openAbout(ActionEvent actionEvent) {
+    public void changeLanguage(ActionEvent actionEvent) {
     }
 }
