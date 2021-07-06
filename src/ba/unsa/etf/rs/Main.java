@@ -40,12 +40,12 @@ public class Main extends Application {
     private void showMenu() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Controller.class.getResource("fxml/Menu.fxml"));
+            loader.setLocation(Controller.class.getResource("/fxml/Menu.fxml"));
             rootLayout = (BorderPane) loader.load();
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
             MenuController viewController = loader.getController();
-            //viewController.setMainApp(this);
+            viewController.setMainApp(this);
             menu = viewController;
             primaryStage.show();
         } catch (IOException e) {
@@ -56,11 +56,11 @@ public class Main extends Application {
     private void showLoadView() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Controller.class.getResource("fxml/LoadView.fxml"));
+            loader.setLocation(Controller.class.getResource("/fxml/LoadView.fxml"));
             AnchorPane loadView = (AnchorPane) loader.load();
             rootLayout.setCenter(loadView);
             LoadViewController viewController = loader.getController();
-            //viewController.setMainApp(this);
+            viewController.setMainApp(this);
             load = viewController;
         } catch (IOException e) {
             throw new MyRuntimeException(""+e.getMessage());
@@ -81,7 +81,9 @@ public class Main extends Application {
 
     private void showResult(){
         showLoadView();
-        //dodati metode
+        showLoadView();
+        menu.enableRestartMenuItem();
+        load.showResult(model.getScore(), model.getTotalScore(), attempt);
     }
 
     public void resumeQuiz(){
@@ -106,11 +108,11 @@ public class Main extends Application {
         if (model.getGameSize() > 0) {
             try {
                 FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(Controller.class.getResource("fxml/QuizView.fxml"));
+                loader.setLocation(Controller.class.getResource("/fxml/QuizView.fxml"));
                 AnchorPane quizView = (AnchorPane) loader.load();
                 rootLayout.setCenter(quizView);
                 QuizViewController viewController = loader.getController();
-                //viewController.setMainApp(this);
+                viewController.setMainApp(this);
                 view = viewController;
                 showQuiz(currentIndex);
             } catch (IOException e) {
@@ -120,7 +122,11 @@ public class Main extends Application {
     }
 
     private void showQuiz(int index){
-
+        view.setProgress((double) (1 + currentIndex + model.getScore()) / (double) model.getTotalScore());
+        if (index < model.getGameSize())
+            view.showQuiz(model.getQuestion(index), model.getAllAnswers(index));
+        else
+            throw new MyRuntimeException("Game is out of bounds: " + index + " of " + model.getGameSize());
     }
 
 }
