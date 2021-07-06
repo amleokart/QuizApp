@@ -39,7 +39,7 @@ public class PersonController {
     @FXML
     private void updateSelectedPerson() {
         Person p = (Person) tablePerson.getSelectionModel().getSelectedItem();
-        //model.setCurrentPerson(p);
+        model.setCurrentPerson(p);
     }
 
     @FXML
@@ -48,7 +48,7 @@ public class PersonController {
         colName.setCellValueFactory(new PropertyValueFactory<Person, String>("name"));
         colNumberPoints.setCellValueFactory(new PropertyValueFactory<Person, Integer>("numberPoints"));
         colDate.setCellValueFactory(new PropertyValueFactory<LocalDate, String>("date"));
-        //tablePerson.setItems(model.getPersons());
+        tablePerson.setItems(model.getPersons());
         tablePerson.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Person>() {
             @Override
             public void changed(ObservableValue<? extends Person> observableValue, Person oldPerson, Person newPerson) {

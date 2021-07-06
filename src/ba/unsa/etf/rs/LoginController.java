@@ -40,13 +40,12 @@ public class LoginController {
     public void loginAction(ActionEvent actionEvent) {
         Stage stage = new Stage();
         try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Controller.class.getResource("/fxml/PersonList.fxml"));
-            PersonController ctrl = new PersonController();
-            loader.setController(ctrl);
+            PersonDAO model = PersonDAO.getInstance();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/PersonList.fxml"));
+            loader.setController(new PersonController(model));
             Parent root = loader.load();
             stage.setTitle("List");
-            stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.setScene(new Scene(root, 600, 500));
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();

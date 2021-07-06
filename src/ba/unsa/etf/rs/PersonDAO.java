@@ -40,7 +40,6 @@ public class PersonDAO {
         } else {
             this.currentPerson.set(currentPerson);
         }
-
     }
 
     public static PersonDAO getInstance() {
@@ -73,7 +72,7 @@ public class PersonDAO {
 
             deleteCurrentPersonStatement = conn.prepareStatement("DELETE FROM person WHERE id=?; COMMIT;");
 
-            updatePersonStatement = conn.prepareStatement("UPDATE person SET name = ?, surname = ?, number_points = ?" + "date = ? WHERE id = ?; COMMIT");
+            updatePersonStatement = conn.prepareStatement("UPDATE person SET name = ?, surname = ?, number_points = ?, date = ? WHERE id = ?; COMMIT");
 
             deleteAllPersonsStatement = conn.prepareStatement("DELETE FROM person WHERE 1 = 1; COMMIT;");
 
