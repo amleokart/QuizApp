@@ -23,7 +23,17 @@
                         <KeyCodeCombination alt="UP" code="O" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
                      </accelerator>
                   </MenuItem>
-                  <SeparatorMenuItem mnemonicParsing="false" />
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem fx:id="mISave" disable="false" mnemonicParsing="false" onAction="#saveResult" text="Save result">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
+                <MenuItem fx:id="mILanguage" disable="false" mnemonicParsing="false" onAction="#changeLanguage" text="Language">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="L" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                    </accelerator>
+                </MenuItem>
                   <MenuItem mnemonicParsing="false" onAction="#quit" text="Quit">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="Q" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
@@ -36,16 +46,18 @@
               <MenuItem mnemonicParsing="false" text="Copy">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="C" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
-                     </accelerator></MenuItem>
+                     </accelerator>
+              </MenuItem>
                   <MenuItem mnemonicParsing="false" text="Paste">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="V" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
-                     </accelerator></MenuItem>
+                     </accelerator>
+                  </MenuItem>
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#openAbout" text="About" />
             </items>
           </Menu>
         </menus>

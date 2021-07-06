@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+    </rowConstraints>
+    <children>
+        <Label styleClass="label" text="Korisničko ime:" />
+        <TextField fx:id="usernameFld" onMouseClicked="#mouse" GridPane.columnIndex="1" />
+        <Label styleClass="label" text="Lozinka:" GridPane.rowIndex="1" />
+        <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Button fx:id="loginBtn" maxWidth="Infinity" mnemonicParsing="false" onAction="#loginAction" text="Login" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+    </children>
+    <padding>
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+    </padding>
+</GridPane>
