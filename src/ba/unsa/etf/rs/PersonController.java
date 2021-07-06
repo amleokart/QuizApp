@@ -10,6 +10,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.time.LocalDate;
@@ -29,6 +31,9 @@ public class PersonController {
 
     public PersonController(PersonDAO model) {
         this.model = model;
+    }
+
+    public PersonController() {
     }
 
     @FXML
@@ -75,5 +80,9 @@ public class PersonController {
     }
 
     public void openAbout(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    private void checkDoubleClick(MouseEvent mouseEvent) {
     }
 }

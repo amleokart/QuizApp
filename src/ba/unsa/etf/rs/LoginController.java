@@ -4,9 +4,17 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+
+import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
 
 public class LoginController {
 
@@ -30,6 +38,19 @@ public class LoginController {
     }
 
     public void loginAction(ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Controller.class.getResource("/fxml/PersonList.fxml"));
+            PersonController ctrl = new PersonController();
+            loader.setController(ctrl);
+            Parent root = loader.load();
+            stage.setTitle("List");
+            stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void mouse(MouseEvent mouseEvent) {
