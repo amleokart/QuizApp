@@ -41,8 +41,6 @@ public class Quiz {
         String str = "Question: " + question;
         for (int i = 0; i < allAnswers.length; i++)
             str = str + "Answer " + i + ":" + allAnswers[i] + "\n";
-        return question + "?\n"
-                + "Correct:" + correct + "\n"
-                + str;
+        return question + "?\n" + "Correct:" + correct + "\n" + str;
     }
 }
