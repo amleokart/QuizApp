@@ -15,7 +15,7 @@ public class QuizModel {
 
     public QuizModel() throws Exception {
         quiz = new LinkedList<Quiz>();
-        //FileImport.importQuiz(this);
+        FileImport.importQuiz(this);
         startGame();
         log(game.toString());
     }
