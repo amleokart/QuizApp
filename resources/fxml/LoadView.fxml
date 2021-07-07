@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rs.LoadViewController">
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <GridPane maxWidth="480.0" minWidth="480.0" prefWidth="480.0" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="12.0">
         <columnConstraints>
@@ -21,12 +21,12 @@
             <RowConstraints />
         </rowConstraints>
          <children>
-            <Label fx:id="headline" alignment="CENTER" contentDisplay="CENTER" maxWidth="480.0" minWidth="480.0" prefWidth="480.0" text="WELCOME!" wrapText="true">
+            <Label fx:id="headline" alignment="CENTER" contentDisplay="CENTER" maxWidth="480.0" minWidth="480.0" prefWidth="480.0" text="%welcome" wrapText="true">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Label fx:id="result" alignment="CENTER" contentDisplay="CENTER" maxWidth="440.0" minWidth="440.0" prefWidth="440.0" text="Please load a new game to play..." textAlignment="CENTER" wrapText="true" GridPane.rowIndex="1">
+            <Label fx:id="result" alignment="CENTER" contentDisplay="CENTER" maxWidth="440.0" minWidth="440.0" prefWidth="440.0" text="%label1" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="20.0" right="20.0" />
                </GridPane.margin>
@@ -36,7 +36,7 @@
             </Label>
             <ButtonBar GridPane.rowIndex="2">
                <buttons>
-                  <Button fx:id="bResume" maxWidth="200.0" minWidth="200.0" mnemonicParsing="false" onAction="#bResume" prefWidth="200.0" text="Revisit unsolved" visible="false" wrapText="true" />
+                  <Button fx:id="bResume" maxWidth="200.0" minWidth="200.0" mnemonicParsing="false" onAction="#bResume" prefWidth="200.0" text="%revisit_unsolved" visible="false" wrapText="true" />
                </buttons>
                <padding>
                   <Insets left="140.0" right="140.0" />
@@ -44,7 +44,7 @@
             </ButtonBar>
             <ButtonBar GridPane.rowIndex="3">
                <buttons>
-                  <Button fx:id="bRestart" maxWidth="200.0" minWidth="200.0" mnemonicParsing="false" onAction="#bRestart" prefWidth="200.0" text="Restart game" visible="false" wrapText="true" />
+                  <Button fx:id="bRestart" maxWidth="200.0" minWidth="200.0" mnemonicParsing="false" onAction="#bRestart" prefWidth="200.0" text="%restart_game" visible="false" wrapText="true" />
                </buttons>
                <padding>
                   <Insets left="140.0" right="140.0" />
@@ -52,7 +52,7 @@
             </ButtonBar>
             <ButtonBar GridPane.rowIndex="4">
                <buttons>
-                  <Button fx:id="bLoad" maxWidth="200.0" minWidth="200.0" mnemonicParsing="false" onAction="#bLoad" prefHeight="18.0" prefWidth="190.0" text="Load new game..." wrapText="true" />
+                  <Button fx:id="bLoad" maxWidth="200.0" minWidth="200.0" mnemonicParsing="false" onAction="#bLoad" prefHeight="18.0" prefWidth="190.0" text="%loadBtn" wrapText="true" />
                </buttons>
                <padding>
                   <Insets left="140.0" right="140.0" />

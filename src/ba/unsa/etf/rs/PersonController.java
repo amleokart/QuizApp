@@ -15,6 +15,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
@@ -86,14 +88,20 @@ public class PersonController {
             if (person == null) {
                 adding = true;
             }
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/EditPerson.fxml"));
-            EditPersonController editPersonController = new EditPersonController(person);
-            loader.setController(editPersonController);
+            Locale.setDefault(new Locale("en", "US"));
+            ResourceBundle bundle = ResourceBundle.getBundle("languages");
+            //FXMLLoader loader = new FXMLLoader();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/EditPerson.fxml"), bundle);
+            EditPersonController ctrl = new EditPersonController(person);
+            loader.setController(ctrl);
+            //FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/EditPerson.fxml"));
+            //EditPersonController editPersonController = new EditPersonController(person);
+            //loader.setController(editPersonController);
             Parent root = null;
             try {
                 root = loader.load();
                 if (person == null) {
-                    editPerson.setTitle("Add new person.");
+                    editPerson.setTitle("Add new person");
                 }
                 editPerson.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
                 editPerson.setResizable(false);
@@ -101,7 +109,7 @@ public class PersonController {
 
                 boolean finalAdding = adding;
                 editPerson.setOnHiding(Event -> {
-                    Person newPerson = editPersonController.getPerson();
+                    Person newPerson = ctrl.getPerson();
                     if (newPerson != null) {
                         if (finalAdding) {
                             model.addPerson(newPerson);
@@ -129,7 +137,7 @@ public class PersonController {
     }
 
     public void deletePerson(ActionEvent actionEvent) {
-        statusMsg.setText("Deleting person.");
+        statusMsg.setText("Deleting person");
         if ( model.getCurrentPerson() != null) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Delete selected person?", ButtonType.OK, ButtonType.NO, ButtonType.CANCEL);
             alert.showAndWait();

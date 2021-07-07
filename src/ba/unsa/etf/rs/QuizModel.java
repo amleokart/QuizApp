@@ -2,6 +2,7 @@ package ba.unsa.etf.rs;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 
 public class QuizModel {
 
@@ -52,11 +53,12 @@ public class QuizModel {
         return quiz.size() - game.size();
     }
 
-    public void remove(int index){
+    public void remove(int index) {
         if (index < game.size())
             game.remove(index);
-        else
+        else {
             throw new MyRuntimeException("Game out of bounds, trying to remove Quiz " + index);
+        }
     }
 
     @Override

@@ -18,19 +18,19 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
     </rowConstraints>
     <children>
-        <Label text="Name">
+        <Label text="%name">
             <GridPane.margin>
                 <Insets left="20.0" />
             </GridPane.margin></Label>
-        <Label text="Surname" GridPane.rowIndex="1">
+        <Label text="%surname" GridPane.rowIndex="1">
             <GridPane.margin>
                 <Insets left="20.0" />
             </GridPane.margin></Label>
-        <Label text="Number of points" GridPane.rowIndex="2">
+        <Label text="%number_points" GridPane.rowIndex="2">
             <GridPane.margin>
                 <Insets left="20.0" />
             </GridPane.margin></Label>
-        <Label text="Date" GridPane.rowIndex="3">
+        <Label text="%date" GridPane.rowIndex="3">
             <GridPane.margin>
                 <Insets left="20.0" />
             </GridPane.margin></Label>
@@ -42,7 +42,7 @@
             <GridPane.margin>
                 <Insets right="25.0" />
             </GridPane.margin></TextField>
-        <Spinner min="0" max="7" fx:id="spinNumberPoints" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+        <Spinner fx:id="spinNumberPoints" max="7" min="0" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
             <GridPane.margin>
                 <Insets right="25.0" />
             </GridPane.margin></Spinner>
@@ -52,8 +52,8 @@
             </GridPane.margin></DatePicker>
         <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
             <buttons>
-                <Button fx:id="btnOk" mnemonicParsing="false" onAction="#validateInput" text="OK" />
-                <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#exit" text="Cancel" />
+                <Button fx:id="btnOk" mnemonicParsing="false" onAction="#validateInput" text="%ok" />
+                <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#exit" text="%cancel" />
             </buttons>
             <GridPane.margin>
                 <Insets right="40.0" />
