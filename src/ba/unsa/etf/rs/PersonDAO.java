@@ -13,7 +13,7 @@ public class PersonDAO {
     private SimpleObjectProperty<Person> currentPerson  = null;
     private static PersonDAO instance = null;
     private Connection conn;
-    private PreparedStatement getPersonStatement, addPersonStatement, deleteCurrentPersonStatement, updatePersonStatement, deleteAllPersonsStatement, getMaxPersonId;
+    private PreparedStatement getPersonStatement, addPersonStatement, deleteCurrentPersonStatement, deleteAllPersonsStatement, getMaxPersonId;
 
     public ObservableList<Person> getPersons() {
         return persons;
@@ -72,8 +72,6 @@ public class PersonDAO {
 
             deleteCurrentPersonStatement = conn.prepareStatement("DELETE FROM person WHERE id=?; COMMIT;");
 
-            updatePersonStatement = conn.prepareStatement("UPDATE person SET name = ?, surname = ?, number_points = ?, date = ? WHERE id = ?; COMMIT");
-
             deleteAllPersonsStatement = conn.prepareStatement("DELETE FROM person WHERE 1 = 1; COMMIT;");
 
             getPersonStatement = conn.prepareStatement("SELECT id, name, surname, number_points, date FROM person ORDER BY id ASC ;");
@@ -82,7 +80,7 @@ public class PersonDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
-            System.out.println("Nije pronadjen driver za konekciju");
+            System.out.println("No connection driver found");
             e.printStackTrace();
         }
     }
@@ -140,23 +138,6 @@ public class PersonDAO {
                 persons.remove(currentPerson.get());
                 currentPerson = null;
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-    public void updateCurrentPerson(Person person) {
-        try {
-            updatePersonStatement.setString(1, person.nameProperty().get());
-            updatePersonStatement.setString(2, person.surnameProperty().get());
-            updatePersonStatement.setInt(4, person.numberPointsProperty().get());
-            updatePersonStatement.setDate(5, Date.valueOf(person.dateProperty().get()));
-            updatePersonStatement.setInt(6, currentPerson.get().getId());
-            updatePersonStatement.executeUpdate();
-            int index = persons.indexOf(currentPerson.get());
-            persons.set(index, person);
-            currentPerson.set(person);
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="386.0" prefWidth="394.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="229.0" minWidth="10.0" prefWidth="205.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="278.0" minWidth="10.0" prefWidth="263.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <Label text="Name">
+            <GridPane.margin>
+                <Insets left="20.0" />
+            </GridPane.margin></Label>
+        <Label text="Surname" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets left="20.0" />
+            </GridPane.margin></Label>
+        <Label text="Number of points" GridPane.rowIndex="2">
+            <GridPane.margin>
+                <Insets left="20.0" />
+            </GridPane.margin></Label>
+        <Label text="Date" GridPane.rowIndex="3">
+            <GridPane.margin>
+                <Insets left="20.0" />
+            </GridPane.margin></Label>
+        <TextField fx:id="fldName" prefWidth="200.0" GridPane.columnIndex="1">
+            <GridPane.margin>
+                <Insets right="25.0" />
+            </GridPane.margin></TextField>
+        <TextField fx:id="fldSurname" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets right="25.0" />
+            </GridPane.margin></TextField>
+        <Spinner min="0" max="7" fx:id="spinNumberPoints" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <GridPane.margin>
+                <Insets right="25.0" />
+            </GridPane.margin></Spinner>
+        <DatePicker fx:id="dpDate" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <GridPane.margin>
+                <Insets right="25.0" />
+            </GridPane.margin></DatePicker>
+        <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <buttons>
+                <Button fx:id="btnOk" mnemonicParsing="false" onAction="#validateInput" text="OK" />
+                <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#exit" text="Cancel" />
+            </buttons>
+            <GridPane.margin>
+                <Insets right="40.0" />
+            </GridPane.margin>
+        </ButtonBar>
+    </children>
+</GridPane>

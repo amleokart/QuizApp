@@ -5,16 +5,18 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.time.LocalDate;
+
+import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 public class PersonController {
 
@@ -64,19 +66,83 @@ public class PersonController {
         });
     }
 
-
     public void exit(ActionEvent actionEvent) {
         Platform.exit();
         System.exit(0);
     }
 
-    public void addPerson(ActionEvent actionEvent) {
+    private void updateTableView() {
+        int index = tablePerson.getSelectionModel().getSelectedIndex();
+        tablePerson.getItems().clear();
+        model.loadPersons();
+        tablePerson.setItems(model.getPersons());
+        tablePerson.requestFocus();
+        tablePerson.getSelectionModel().select(index);
     }
 
-    public void editPerson(ActionEvent actionEvent) {
+    public void openNewWindow(Person person) {
+        if(!editPerson.isShowing()) {
+            boolean adding = false;
+            if (person == null) {
+                adding = true;
+            }
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/EditPerson.fxml"));
+            EditPersonController editPersonController = new EditPersonController(person);
+            loader.setController(editPersonController);
+            Parent root = null;
+            try {
+                root = loader.load();
+                if (person == null) {
+                    editPerson.setTitle("Add new person.");
+                }
+                editPerson.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+                editPerson.setResizable(false);
+                editPerson.show();
+
+                boolean finalAdding = adding;
+                editPerson.setOnHiding(Event -> {
+                    Person newPerson = editPersonController.getPerson();
+                    if (newPerson != null) {
+                        if (finalAdding) {
+                            model.addPerson(newPerson);
+                            updateTableView();
+                            statusMsg.setText("Person added.");
+                            tablePerson.getSelectionModel().selectLast();
+                        }
+                    } else {
+                        if (finalAdding) {
+                            statusMsg.setText("Person not added.");
+                        }
+                    }
+                });
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void addPerson(ActionEvent actionEvent) {
+        statusMsg.setText("Adding new book.");
+        if(!editPerson.isShowing()) {
+            openNewWindow(null);
+        }
     }
 
     public void deletePerson(ActionEvent actionEvent) {
+        statusMsg.setText("Deleting person.");
+        if ( model.getCurrentPerson() != null) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Delete selected person?", ButtonType.OK, ButtonType.NO, ButtonType.CANCEL);
+            alert.showAndWait();
+
+            if (alert.getResult() == ButtonType.OK) {
+                model.deletePerson();
+                updateTableView();
+                tablePerson.getSelectionModel().selectFirst();
+                statusMsg.setText("Person deleted.");
+            } else {
+                statusMsg.setText("Person not deleted.");
+            }
+        }
     }
 
     public void openAbout(ActionEvent actionEvent) {

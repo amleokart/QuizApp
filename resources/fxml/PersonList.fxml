@@ -46,11 +46,6 @@
                                         <KeyCodeCombination alt="UP" code="A" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                                     </accelerator>
                                 </MenuItem>
-                                <MenuItem mnemonicParsing="true" onAction="#editPerson" text="Change">
-                                    <accelerator>
-                                        <KeyCodeCombination alt="UP" code="H" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
-                                    </accelerator>
-                                </MenuItem>
                                 <MenuItem mnemonicParsing="true" onAction="#deletePerson" text="Delete">
                                     <accelerator>
                                         <KeyCodeCombination alt="UP" code="D" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
