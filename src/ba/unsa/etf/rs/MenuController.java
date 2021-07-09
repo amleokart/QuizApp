@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceDialog;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.MenuItem;
@@ -61,6 +62,10 @@ public class MenuController {
     }
     
     public void openAbout(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Help: notification");
+        alert.setHeaderText("The application allows you to load the quiz you received and solve it.\nAfter that, you will have an insight into the result and the possibility of saving the result.\nThe application is very simple and a logical sequence of steps will lead you to the desired option.");
+        alert.showAndWait();
     }
 
     public void changeLanguage(ActionEvent actionEvent) {
