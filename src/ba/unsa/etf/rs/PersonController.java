@@ -88,15 +88,9 @@ public class PersonController {
             if (person == null) {
                 adding = true;
             }
-            Locale.setDefault(new Locale("en", "US"));
-            ResourceBundle bundle = ResourceBundle.getBundle("languages");
-            //FXMLLoader loader = new FXMLLoader();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/EditPerson.fxml"), bundle);
-            EditPersonController ctrl = new EditPersonController(person);
-            loader.setController(ctrl);
-            //FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/EditPerson.fxml"));
-            //EditPersonController editPersonController = new EditPersonController(person);
-            //loader.setController(editPersonController);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/EditPerson.fxml"));
+            EditPersonController editPersonController = new EditPersonController(person);
+            loader.setController(editPersonController);
             Parent root = null;
             try {
                 root = loader.load();
@@ -109,7 +103,7 @@ public class PersonController {
 
                 boolean finalAdding = adding;
                 editPerson.setOnHiding(Event -> {
-                    Person newPerson = ctrl.getPerson();
+                    Person newPerson = editPersonController.getPerson();
                     if (newPerson != null) {
                         if (finalAdding) {
                             model.addPerson(newPerson);

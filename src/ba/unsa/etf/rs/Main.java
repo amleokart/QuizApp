@@ -40,18 +40,8 @@ public class Main extends Application {
 
     private void showMenu() {
         try {
-            /*
-            Locale.setDefault(new Locale("bs", "BA"));
-            ResourceBundle bundle = ResourceBundle.getBundle("languages");
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/glavna.fxml"), bundle);
-             */
-            Locale.setDefault(new Locale("en", "US"));
-            ResourceBundle bundle = ResourceBundle.getBundle("languages");
-            //FXMLLoader loader = new FXMLLoader();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Menu.fxml"), bundle);
-            MenuController ctrl = new MenuController();
-            loader.setController(ctrl);
-            //loader.setLocation(Controller.class.getResource("/fxml/Menu.fxml"), bundle);
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Controller.class.getResource("/fxml/Menu.fxml"));
             rootLayout = (BorderPane) loader.load();
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
@@ -66,14 +56,8 @@ public class Main extends Application {
 
     private void showLoadView() {
         try {
-            Locale.setDefault(new Locale("en", "US"));
-            ResourceBundle bundle = ResourceBundle.getBundle("languages");
-            //FXMLLoader loader = new FXMLLoader();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/LoadView.fxml"), bundle);
-            LoadViewController ctrl = new LoadViewController();
-            loader.setController(ctrl);
-            /*FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Controller.class.getResource("/fxml/LoadView.fxml"));*/
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Controller.class.getResource("/fxml/LoadView.fxml"));
             AnchorPane loadView = (AnchorPane) loader.load();
             rootLayout.setCenter(loadView);
             LoadViewController viewController = loader.getController();
@@ -124,14 +108,8 @@ public class Main extends Application {
         attempt = attempt + 1;
         if (model.getGameSize() > 0) {
             try {
-                Locale.setDefault(new Locale("en", "US"));
-                ResourceBundle bundle = ResourceBundle.getBundle("languages");
-                //FXMLLoader loader = new FXMLLoader();
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/QuizView.fxml"), bundle);
-                QuizViewController ctrl = new QuizViewController();
-                loader.setController(ctrl);
-                /*FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(Controller.class.getResource("/fxml/QuizView.fxml"));*/
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(Controller.class.getResource("/fxml/QuizView.fxml"));
                 AnchorPane quizView = (AnchorPane) loader.load();
                 rootLayout.setCenter(quizView);
                 QuizViewController viewController = loader.getController();

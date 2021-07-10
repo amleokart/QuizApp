@@ -1,5 +1,6 @@
 package ba.unsa.etf.rs;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,8 +23,6 @@ public class MenuController {
     private Main mainApp;
     @FXML
     private MenuItem mIRestart;
-    private String[] lans = new String[2];
-    private String currentLan;
 
     public void setMainApp(Main mainApp) {
         this.mainApp = mainApp;
@@ -43,14 +42,9 @@ public class MenuController {
     public void saveResult(ActionEvent actionEvent) {
         Stage stage = new Stage();
         try {
-            Locale.setDefault(new Locale("en", "US"));
-            ResourceBundle bundle = ResourceBundle.getBundle("languages");
-            //FXMLLoader loader = new FXMLLoader();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Login.fxml"), bundle);
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Controller.class.getResource("/fxml/Login.fxml"));
             LoginController ctrl = new LoginController();
-            //FXMLLoader loader = new FXMLLoader();
-            //loader.setLocation(Controller.class.getResource("/fxml/Login.fxml"));
-            //LoginController ctrl = new LoginController();
             loader.setController(ctrl);
             Parent root = loader.load();
             stage.setTitle("Login");
@@ -64,14 +58,9 @@ public class MenuController {
     public void openAbout(ActionEvent actionEvent) {
         Stage stage = new Stage();
         try {
-            Locale.setDefault(new Locale("en", "US"));
-            ResourceBundle bundle = ResourceBundle.getBundle("languages");
-            //FXMLLoader loader = new FXMLLoader();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/About.fxml"), bundle);
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Controller.class.getResource("/fxml/About.fxml"));
             AboutController ctrl = new AboutController();
-            //FXMLLoader loader = new FXMLLoader();
-            //loader.setLocation(Controller.class.getResource("/fxml/Login.fxml"));
-            //LoginController ctrl = new LoginController();
             loader.setController(ctrl);
             Parent root = loader.load();
             stage.setTitle("Help");
@@ -83,24 +72,9 @@ public class MenuController {
     }
 
     public void changeLanguage(ActionEvent actionEvent) {
-        if (Locale.getDefault().getCountry().equals("BA")) currentLan = lans[0];
-        else currentLan = lans[1];
-        Dialog d = new ChoiceDialog<>(currentLan, lans);
-        ResourceBundle bundle = ResourceBundle.getBundle("languages");
-        d.setTitle(bundle.getString("languageChoice"));
-        d.setHeaderText(bundle.getString("pleaseChooseLan"));
-        d.setContentText(bundle.getString("language") + ":");
-        d.showAndWait();
-        if (currentLan != ((ChoiceDialog) d).getSelectedItem().toString()) {
-            if (currentLan.equals(lans[0])) currentLan = lans[1];
-            else currentLan = lans[0];
-            if (currentLan.equals("English")) {
-                Locale.setDefault(new Locale("en", "US"));
-                System.out.println("en");
-            } else {
-                Locale.setDefault(new Locale("bs", "BA"));
-                System.out.println("bs");
-            }
-        }
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Notification");
+        alert.setHeaderText("This feature is still under construction!");
+        alert.showAndWait();
     }
 }

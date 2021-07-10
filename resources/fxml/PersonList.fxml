@@ -8,9 +8,9 @@
     <center>
         <TableView fx:id="tablePerson" onMouseClicked="#checkDoubleClick" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <columns>
-                <TableColumn fx:id="colName" prefWidth="160.0" text="%name_col" />
-                <TableColumn fx:id="colNumberPoints" prefWidth="233.0" text="%numberPoints_col" />
-                <TableColumn fx:id="colDate" minWidth="0.0" prefWidth="198.0" text="%date_col" />
+                <TableColumn fx:id="colName" prefWidth="160.0" text="Name" />
+                <TableColumn fx:id="colNumberPoints" prefWidth="233.0" text="Number of points" />
+                <TableColumn fx:id="colDate" minWidth="0.0" prefWidth="198.0" text="Date" />
             </columns>
         </TableView>
     </center>
@@ -19,9 +19,9 @@
             <children>
                 <MenuBar>
                     <menus>
-                        <Menu mnemonicParsing="true" text="%file">
+                        <Menu mnemonicParsing="true" text="File">
                             <items>
-                                <MenuItem mnemonicParsing="true" onAction="#exit" text="%exit">
+                                <MenuItem mnemonicParsing="true" onAction="#exit" text="Exit">
                                     <accelerator>
                                         <KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                                     </accelerator>
@@ -31,14 +31,14 @@
                                 <KeyCodeCombination alt="ANY" code="F" control="UP" meta="UP" shift="UP" shortcut="UP" />
                             </accelerator>
                         </Menu>
-                        <Menu mnemonicParsing="true" text="%edit">
+                        <Menu mnemonicParsing="true" text="Edit">
                             <items>
-                                <MenuItem mnemonicParsing="true" onAction="#addPerson" text="%add">
+                                <MenuItem mnemonicParsing="true" onAction="#addPerson" text="Add">
                                     <accelerator>
                                         <KeyCodeCombination alt="UP" code="A" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                                     </accelerator>
                                 </MenuItem>
-                                <MenuItem mnemonicParsing="true" onAction="#deletePerson" text="%delete">
+                                <MenuItem mnemonicParsing="true" onAction="#deletePerson" text="Delete">
                                     <accelerator>
                                         <KeyCodeCombination alt="UP" code="D" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                                     </accelerator>
@@ -48,9 +48,9 @@
                                 <KeyCodeCombination alt="DOWN" code="E" control="UP" meta="UP" shift="UP" shortcut="UP" />
                             </accelerator>
                         </Menu>
-                        <Menu mnemonicParsing="true" text="%help">
+                        <Menu mnemonicParsing="true" text="Help">
                             <items>
-                                <MenuItem mnemonicParsing="true" onAction="#openAbout" text="%about" />
+                                <MenuItem mnemonicParsing="true" onAction="#openAbout" text="About" />
                             </items>
                         </Menu>
                     </menus>

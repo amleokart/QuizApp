@@ -67,12 +67,7 @@ public class LoginController {
         Stage stage = new Stage();
         try {
             PersonDAO model = PersonDAO.getInstance();
-            Locale.setDefault(new Locale("en", "US"));
-            ResourceBundle bundle = ResourceBundle.getBundle("languages");
-            //FXMLLoader loader = new FXMLLoader();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/PersonList.fxml"), bundle);
-            LoginController ctrl = new LoginController();
-            //FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/PersonList.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/PersonList.fxml"));
             loader.setController(new PersonController(model));
             Parent root = loader.load();
             stage.setTitle("List");

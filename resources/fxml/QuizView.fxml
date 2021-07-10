@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rs.QuizViewController">
    <children>
       <GridPane layoutX="12.0" layoutY="100.0" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="5.0">
          <columnConstraints>
@@ -42,7 +42,7 @@
             </Group>
             <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.rowIndex="2">
               <buttons>
-                  <Button fx:id="bNext" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" minWidth="100.0" mnemonicParsing="false" onAction="#bNext" prefWidth="100.0" text="%nextBtn" textAlignment="CENTER" />
+                  <Button fx:id="bNext" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" minWidth="100.0" mnemonicParsing="false" onAction="#bNext" prefWidth="100.0" text="Next" textAlignment="CENTER" />
               </buttons>
                <padding>
                   <Insets left="170.0" right="180.0" />

@@ -18,19 +18,19 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
     </rowConstraints>
     <children>
-        <Label text="%name">
+        <Label text="Name:">
             <GridPane.margin>
                 <Insets left="20.0" />
             </GridPane.margin></Label>
-        <Label text="%surname" GridPane.rowIndex="1">
+        <Label text="Surname:" GridPane.rowIndex="1">
             <GridPane.margin>
                 <Insets left="20.0" />
             </GridPane.margin></Label>
-        <Label text="%number_points" GridPane.rowIndex="2">
+        <Label text="Number of points:" GridPane.rowIndex="2">
             <GridPane.margin>
                 <Insets left="20.0" />
             </GridPane.margin></Label>
-        <Label text="%date" GridPane.rowIndex="3">
+        <Label text="Date:" GridPane.rowIndex="3">
             <GridPane.margin>
                 <Insets left="20.0" />
             </GridPane.margin></Label>
@@ -52,8 +52,8 @@
             </GridPane.margin></DatePicker>
         <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
             <buttons>
-                <Button fx:id="btnOk" mnemonicParsing="false" onAction="#validateInput" text="%ok" />
-                <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#exit" text="%cancel" />
+                <Button fx:id="btnOk" mnemonicParsing="false" onAction="#validateInput" text="OK" />
+                <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#exit" text="Cancel" />
             </buttons>
             <GridPane.margin>
                 <Insets right="40.0" />
