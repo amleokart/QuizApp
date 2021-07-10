@@ -7,9 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -22,6 +20,8 @@ public class LoginController {
     public TextField fldUsername;
     public PasswordField fldPassword;
     public Button btnLogin;
+    public CheckBox cbProfessor;
+    public Label lblPassword;
 
     @FXML
     public void initialize() {
@@ -81,5 +81,12 @@ public class LoginController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void validProfessor(ActionEvent actionEvent) {
+        if (cbProfessor.isSelected())
+            fldPassword.setDisable(false);
+        else
+            fldPassword.setDisable(true);
     }
 }
