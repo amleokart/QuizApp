@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="/css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <bottom>
+        <Label text="Application for electronic exams and quizzes 2021." BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets />
+            </BorderPane.margin>
+            <padding>
+                <Insets bottom="15.0" />
+            </padding>
+        </Label>
+    </bottom>
+    <center>
+        <ImageView fx:id="imgAbout" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+            <image>
+                <Image backgroundLoading="true" url="/img/logo.jpg" />
+            </image>
+        </ImageView>
+    </center>
+    <top>
+        <VBox alignment="CENTER" prefHeight="122.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="Need help?">
+                    <VBox.margin>
+                        <Insets bottom="15.0" />
+                    </VBox.margin>
+                    <padding>
+                        <Insets top="5.0" />
+                    </padding>
+                </Label>
+                <Button mnemonicParsing="false" text="How does the application work?" onAction="#openHelp" />
+            </children>
+        </VBox>
+    </top>
+</BorderPane>

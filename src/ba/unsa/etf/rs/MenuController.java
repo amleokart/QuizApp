@@ -62,10 +62,24 @@ public class MenuController {
     }
     
     public void openAbout(ActionEvent actionEvent) {
-        Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setTitle("Help: notification");
-        alert.setHeaderText("The application allows you to load the quiz you received and solve it.\nAfter that, you will have an insight into the result and the possibility of saving the result.\nThe application is very simple and a logical sequence of steps will lead you to the desired option.");
-        alert.showAndWait();
+        Stage stage = new Stage();
+        try {
+            Locale.setDefault(new Locale("en", "US"));
+            ResourceBundle bundle = ResourceBundle.getBundle("languages");
+            //FXMLLoader loader = new FXMLLoader();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/About.fxml"), bundle);
+            AboutController ctrl = new AboutController();
+            //FXMLLoader loader = new FXMLLoader();
+            //loader.setLocation(Controller.class.getResource("/fxml/Login.fxml"));
+            //LoginController ctrl = new LoginController();
+            loader.setController(ctrl);
+            Parent root = loader.load();
+            stage.setTitle("Help");
+            stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void changeLanguage(ActionEvent actionEvent) {

@@ -154,6 +154,10 @@ public class PersonController {
     }
 
     public void openAbout(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Help");
+        alert.setHeaderText("You have the ability to add and delete a person. \nThe list that appears at the beginning is a list of people who exist in the database. \nAfter adding a new person, they should appear in the list and be saved in the database. \nThe possibility of editing existing persons is excluded due to the potential situation of revision of points.");
+        alert.showAndWait();
     }
 
     @FXML
