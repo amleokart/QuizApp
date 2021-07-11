@@ -1,0 +1,41 @@
+What is a correct syntax to output "Hello World" in Java
+System.out.println("Hello World");  
+Console.WriteLine("Hello World");
+
+How do you create a variable with the floating number 2.8
+float x = 2.8f;  
+x = 2.8f;  
+int x = 2.8f;
+byte x = 2.8f
+
+Which operator is used to add together two values
+The + sign
+The & sign
+The * sign
+
+How do you call a method in Java
+methodName();
+methodName;
+methodName[];
+(methodName);
+
+Java is short for "JavaScript"
+False
+True
+Maybe
+
+What is the correct way to create an object called myObj of MyClass
+MyClass myObj = new MyClass();  
+class myObj = new MyClass();  
+class MyClass = new myObj();
+new myObj = MyClass();
+myObj = myClass() new;
+myObj = class MyObj();
+
+Which keyword is used to import a package from the Java API library
+import
+package
+getlib
+lib
+class
+struct
