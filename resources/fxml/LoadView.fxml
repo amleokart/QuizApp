@@ -21,12 +21,12 @@
             <RowConstraints />
         </rowConstraints>
          <children>
-            <Label fx:id="headline" alignment="CENTER" contentDisplay="CENTER" maxWidth="480.0" minWidth="480.0" prefWidth="480.0" text="WELCOME!" wrapText="true">
+            <Label fx:id="headline" alignment="CENTER" contentDisplay="CENTER" maxWidth="480.0" minWidth="480.0" prefWidth="480.0" text="WELCOME!" textFill="#293250" wrapText="true">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Label fx:id="result" alignment="CENTER" contentDisplay="CENTER" maxWidth="440.0" minWidth="440.0" prefWidth="440.0" text="Please load new quiz..." textAlignment="CENTER" wrapText="true" GridPane.rowIndex="1">
+            <Label fx:id="result" alignment="CENTER" contentDisplay="CENTER" maxWidth="440.0" minWidth="440.0" prefWidth="440.0" text="Please load new quiz... I wish you luck!" textAlignment="CENTER" textFill="#293250" wrapText="true" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="20.0" right="20.0" />
                </GridPane.margin>
@@ -52,7 +52,7 @@
             </ButtonBar>
             <ButtonBar GridPane.rowIndex="4">
                <buttons>
-                  <Button fx:id="bLoad" maxWidth="200.0" minWidth="200.0" mnemonicParsing="false" onAction="#bLoad" prefHeight="18.0" prefWidth="190.0" text="Load" wrapText="true" />
+                  <Button fx:id="bLoad" maxWidth="200.0" minWidth="200.0" mnemonicParsing="false" onAction="#bLoad" prefHeight="18.0" prefWidth="190.0" text="Load" textFill="#293250" wrapText="true" />
                </buttons>
                <padding>
                   <Insets left="140.0" right="140.0" />

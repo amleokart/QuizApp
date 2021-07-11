@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane stylesheets="/css/style.css" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane hgap="10" style="-fx-background-color: #FFD55A;" stylesheets="/css/style.css" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <columnConstraints>
         <ColumnConstraints hgrow="ALWAYS" />
         <ColumnConstraints />
@@ -25,7 +25,7 @@
         <TextField fx:id="fldName" GridPane.columnIndex="2" />
         <Label text="Username:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
         <TextField fx:id="fldUsername" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-        <CheckBox fx:id="cbProfessor" mnemonicParsing="false" text="Professor" GridPane.columnIndex="2" GridPane.rowIndex="3" onAction="#validProfessor" />
+        <CheckBox fx:id="cbProfessor" mnemonicParsing="false" onAction="#validProfessor" text="Professor" GridPane.columnIndex="2" GridPane.rowIndex="3" />
         <Label fx:id="lblPassword" text="Password:" GridPane.columnIndex="1" GridPane.rowIndex="4" />
         <PasswordField fx:id="fldPassword" disable="true" GridPane.columnIndex="2" GridPane.rowIndex="4" />
         <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="7">

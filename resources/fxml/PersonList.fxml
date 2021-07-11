@@ -6,7 +6,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="/css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <center>
-        <TableView fx:id="tablePerson" onMouseClicked="#checkDoubleClick" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <TableView fx:id="tablePerson" onMouseClicked="#checkDoubleClick" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #6DD47E;" BorderPane.alignment="CENTER">
             <columns>
                 <TableColumn fx:id="colName" prefWidth="160.0" text="Name" />
                 <TableColumn fx:id="colNumberPoints" prefWidth="233.0" text="Number of points" />
@@ -15,9 +15,9 @@
         </TableView>
     </center>
     <top>
-        <VBox prefHeight="47.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <VBox prefHeight="47.0" prefWidth="600.0" style="-fx-background-color: #6DD47E;" BorderPane.alignment="CENTER">
             <children>
-                <MenuBar>
+                <MenuBar style="-fx-background-color: #6DD47E;">
                     <menus>
                         <Menu mnemonicParsing="true" text="File">
                             <items>
@@ -59,6 +59,6 @@
         </VBox>
     </top>
     <bottom>
-        <Label fx:id="statusMsg" text="" BorderPane.alignment="CENTER_LEFT" />
+        <Label fx:id="statusMsg" style="-fx-background-color: #6DD47E;" text="" BorderPane.alignment="CENTER_LEFT" />
     </bottom>
 </BorderPane>

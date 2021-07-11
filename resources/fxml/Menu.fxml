@@ -4,9 +4,9 @@
 <?import javafx.scene.input.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="480.0" maxWidth="480.0" minHeight="480.0" minWidth="480.0" prefHeight="480.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="ba.unsa.etf.rs.MenuController">
+<BorderPane maxHeight="480.0" maxWidth="480.0" minHeight="480.0" minWidth="480.0" prefHeight="480.0" prefWidth="480.0" style="-fx-background-color: #FFD55A;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rs.MenuController">
    <top>
-      <MenuBar BorderPane.alignment="CENTER">
+      <MenuBar style="-fx-background-color: #6DD47E;" BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>

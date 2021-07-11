@@ -6,9 +6,9 @@
 
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="/css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" style="-fx-background-color: #FFD55A;" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="/css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <bottom>
-        <Label text="Application for electronic exams and quizzes 2021." BorderPane.alignment="CENTER">
+        <Label text="Application for electronic exams and quizzes 2021." textFill="#293250" BorderPane.alignment="CENTER">
             <BorderPane.margin>
                 <Insets />
             </BorderPane.margin>
@@ -27,7 +27,7 @@
     <top>
         <VBox alignment="CENTER" prefHeight="122.0" prefWidth="600.0" BorderPane.alignment="CENTER">
             <children>
-                <Label text="Need help?">
+                <Label text="Need help?" textFill="#293250">
                     <VBox.margin>
                         <Insets bottom="15.0" />
                     </VBox.margin>
@@ -35,7 +35,7 @@
                         <Insets top="5.0" />
                     </padding>
                 </Label>
-                <Button mnemonicParsing="false" text="How does the application work?" onAction="#openHelp" />
+                <Button mnemonicParsing="false" text="How does the application work?" textFill="#293250" onAction="#openHelp" />
             </children>
         </VBox>
     </top>
