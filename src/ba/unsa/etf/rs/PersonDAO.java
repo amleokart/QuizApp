@@ -79,7 +79,6 @@ public class PersonDAO {
             getMaxPersonId = conn.prepareStatement("SELECT MAX(id) + 1 FROM person;");
 
             loginStatement = conn.prepareStatement("SELECT * FROM login WHERE username=? and password=?");
-
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {

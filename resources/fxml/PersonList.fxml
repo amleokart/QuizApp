@@ -8,9 +8,9 @@
     <center>
         <TableView fx:id="tablePerson" onMouseClicked="#checkDoubleClick" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #6DD47E;" BorderPane.alignment="CENTER">
             <columns>
-                <TableColumn fx:id="colName" prefWidth="160.0" text="Name" />
-                <TableColumn fx:id="colNumberPoints" prefWidth="233.0" text="Number of points" />
-                <TableColumn fx:id="colDate" minWidth="0.0" prefWidth="198.0" text="Date" />
+                <TableColumn fx:id="colName" prefWidth="171.0" style="-fx-background-color: #90EE90;" text="Name" />
+                <TableColumn fx:id="colNumberPoints" prefWidth="222.0" style="-fx-background-color: #6DD47E;" text="Number of points" />
+                <TableColumn fx:id="colDate" minWidth="0.0" prefWidth="206.0" style="-fx-background-color: #90EE90;" text="Date" />
             </columns>
         </TableView>
     </center>

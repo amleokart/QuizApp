@@ -1,20 +1,14 @@
 package ba.unsa.etf.rs;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import javafx.util.StringConverter;
-
 import java.io.IOException;
 import java.sql.SQLException;
-import java.time.LocalDate;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
@@ -44,7 +38,7 @@ public class LoginController {
 
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
-            alert.setHeaderText("Error while logging in.");
+            alert.setHeaderText("Error while logging in");
             alert.setContentText("You did not insert username or password, please try again.");
             alert.show();
             return;
@@ -59,7 +53,7 @@ public class LoginController {
             fldPassword.getStyleClass().add("fieldIncorrect");
             Alert alert =new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
-            alert.setHeaderText("Error while logging in.");
+            alert.setHeaderText("Error while logging in");
             alert.setContentText("Invalid username or password. Please try again.");
             alert.show();
 
@@ -80,7 +74,6 @@ public class LoginController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
     }
 
