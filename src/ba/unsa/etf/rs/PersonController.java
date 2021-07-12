@@ -3,6 +3,8 @@ package ba.unsa.etf.rs;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -30,14 +32,19 @@ public class PersonController {
     private PersonDAO model;
     Stage editPerson = new Stage();
     Stage aboutWindow = new Stage();
+    private PersonDAO dao;
+    private ObservableList<Person> listPersons;
+
     @FXML
     private Label statusMsg;
 
-    public PersonController(PersonDAO model) {
-        this.model = model;
+    public PersonController() {
+        dao = PersonDAO.getInstance();
+        listPersons = FXCollections.observableArrayList(dao.getPersons());
     }
 
-    public PersonController() {
+    public PersonController(PersonDAO model) {
+        this.model = model;
     }
 
     @FXML
@@ -52,7 +59,8 @@ public class PersonController {
         colName.setCellValueFactory(new PropertyValueFactory<Person, String>("name"));
         colNumberPoints.setCellValueFactory(new PropertyValueFactory<Person, Integer>("numberPoints"));
         colDate.setCellValueFactory(new PropertyValueFactory<LocalDate, String>("date"));
-        tablePerson.setItems(model.getPersons());
+        tablePerson.setItems(listPersons);
+        //tablePerson.setItems(model.getPersons());
         tablePerson.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Person>() {
             @Override
             public void changed(ObservableValue<? extends Person> observableValue, Person oldPerson, Person newPerson) {

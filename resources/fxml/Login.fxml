@@ -21,13 +21,10 @@
       <RowConstraints />
     </rowConstraints>
     <children>
-        <Label text="Name:" GridPane.columnIndex="1" />
-        <TextField fx:id="fldName" GridPane.columnIndex="2" />
         <Label text="Username:" GridPane.columnIndex="1" GridPane.rowIndex="2" />
         <TextField fx:id="fldUsername" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-        <CheckBox fx:id="cbProfessor" mnemonicParsing="false" onAction="#validProfessor" text="Professor" GridPane.columnIndex="2" GridPane.rowIndex="3" />
         <Label fx:id="lblPassword" text="Password:" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-        <PasswordField fx:id="fldPassword" disable="true" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+        <PasswordField fx:id="fldPassword" disable="false" GridPane.columnIndex="2" GridPane.rowIndex="4" />
         <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="7">
             <buttons>
                 <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#loginAction" text="Login" />

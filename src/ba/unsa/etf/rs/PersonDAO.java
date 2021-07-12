@@ -13,7 +13,7 @@ public class PersonDAO {
     private SimpleObjectProperty<Person> currentPerson  = null;
     private static PersonDAO instance = null;
     private Connection conn;
-    private PreparedStatement getPersonStatement, addPersonStatement, deleteCurrentPersonStatement, deleteAllPersonsStatement, getMaxPersonId;
+    private PreparedStatement getPersonStatement, addPersonStatement, deleteCurrentPersonStatement, deleteAllPersonsStatement, getMaxPersonId, loginStatement;
 
     public ObservableList<Person> getPersons() {
         return persons;
@@ -77,6 +77,9 @@ public class PersonDAO {
             getPersonStatement = conn.prepareStatement("SELECT id, name, surname, number_points, date FROM person ORDER BY id ASC ;");
 
             getMaxPersonId = conn.prepareStatement("SELECT MAX(id) + 1 FROM person;");
+
+            loginStatement = conn.prepareStatement("SELECT * FROM login WHERE username=? and password=?");
+
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -162,5 +165,19 @@ public class PersonDAO {
         for(int i=0; i< persons.size(); i++)
             list += persons.get(i).toString() + "\n";
         return list;
+    }
+
+    public boolean validate(String username, String password) throws SQLException {
+        try {
+            loginStatement.setString(1,username);
+            loginStatement.setString(2,password);
+            ResultSet resultSet = loginStatement.executeQuery();
+            if (resultSet.next()) {
+                return true;
+            }
+
+        } catch (SQLException e) {
+        }
+        return false;
     }
 }
