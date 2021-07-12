@@ -21,12 +21,15 @@
             <RowConstraints />
         </rowConstraints>
          <children>
-            <Label fx:id="headline" alignment="CENTER" contentDisplay="CENTER" maxWidth="480.0" minWidth="480.0" prefWidth="480.0" text="WELCOME!" textFill="#293250" wrapText="true">
+            <Label fx:id="headline" alignment="CENTER" contentDisplay="CENTER" maxWidth="480.0" minWidth="480.0" prefWidth="480.0" text="WELCOME TO THE QUIZ APP!" textFill="#293250" wrapText="true">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
+               <opaqueInsets>
+                  <Insets right="5.0" />
+               </opaqueInsets>
             </Label>
-            <Label fx:id="result" alignment="CENTER" contentDisplay="CENTER" maxWidth="440.0" minWidth="440.0" prefWidth="440.0" text="Please load new quiz... I wish you luck!" textAlignment="CENTER" textFill="#293250" wrapText="true" GridPane.rowIndex="1">
+            <Label fx:id="result" alignment="CENTER" contentDisplay="CENTER" maxWidth="440.0" minWidth="440.0" prefWidth="440.0" text="Load your question file and start solving the quiz. I wish you luck!" textAlignment="CENTER" textFill="#293250" wrapText="true" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="20.0" right="20.0" />
                </GridPane.margin>
