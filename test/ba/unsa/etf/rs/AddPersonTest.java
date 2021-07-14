@@ -110,7 +110,7 @@ class AddPersonTest {
 
 
     @Test
-    public void spinnerTest(FxRobot robot) {
+    public void testSpinner(FxRobot robot) {
         robot.clickOn("#fldName");
         robot.write("Elma");
         robot.clickOn("#fldSurname");
